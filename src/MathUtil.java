@@ -4,6 +4,9 @@ public class MathUtil {
 			case '*':	return number1*number2;
 			case '+':	return number1+number2;
 			case '-':	return number1-number2;
+			case '/':	if((number1 != 0)&&(number2 != 0)){
+				return number1/number2;
+			}else{return 0;}
 			default:	return 0;
 		}
 		
