@@ -240,6 +240,7 @@ public class CalculatorApp extends JFrame{
                 //set answer to 0?
                 break;
         }
+        updateView();
 
     }
 
@@ -249,12 +250,23 @@ public class CalculatorApp extends JFrame{
         //update number1, if not operator
         //if operator, then update num 2
         //call UpdateView()
-
+        if(operator.equals("")){
+            firstArg += num;
+        }
+        else{
+            secondArg += num;
+        }
+        updateView();
     }
 
     private void setOperator(String op){
         this.operator = op;
+        updateView();
         //if clicked again, hit enter then set new?
+    }
+
+    private void updateView(){
+        displayLabel.setText(firstArg + operator + secondArg);
     }
 
     public static void main(String[] args) {
