@@ -2,6 +2,12 @@
 
 The calculator will have the following buttons:
 
+
+        JButton oneButton, twoButton, threeButton, fourButton, fiveButton,
+                sixButton, sevenButton, eightButton, nineButton, addButton,
+                minusButton, multiplyButton, divideButton, zeroButton,
+                clearButton, memoryButton, recallButton, equalsButton;
+
         oneButton=new JButton("1");
         twoButton=new JButton("2");
         threeButton=new JButton("3");
