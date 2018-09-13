@@ -275,7 +275,6 @@ public class CalculatorApp extends JFrame{
                 catch(IllegalArgumentException e){
                     //make popup window?
                     //otherwise set result to 0?
-                    System.out.println("Fucky");
                     result = 0;
                 }
                 break;
@@ -312,10 +311,11 @@ public class CalculatorApp extends JFrame{
         if(firstArg.equals("") && op.equals("-")){
             firstArg += op;
         }
-        else if(!firstArg.equals("") || !(firstArg.equals("-"))){
+        else if((!firstArg.equals("") || !(firstArg.equals("-")))&&operator.equals("")){
             this.operator = op;
         }
         else if(!this.operator.equals("")){
+            System.out.println("Fuckery");
             if(secondArg.equals("") && op.equals("-")){
                 secondArg += op;
             }
