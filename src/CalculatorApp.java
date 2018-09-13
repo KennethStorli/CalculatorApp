@@ -205,6 +205,30 @@ public class CalculatorApp extends JFrame{
             }
         });
 
+        JButton saveButton = new JButton("Save");
+        saveButton.setBounds(400,100,100,50);
+        this.add(saveButton);
+        saveButton.addActionListener(new ActionListener(){
+
+            @Override
+            public void actionPerformed(ActionEvent arg0){
+                //Save stuff
+            }
+        });
+
+
+
+        JButton retrieveButton = new JButton("Get");
+        retrieveButton.setBounds(400,100,100,50);
+        this.add(retrieveButton);
+        retrieveButton.addActionListener(new ActionListener(){
+
+            @Override
+            public void actionPerformed(ActionEvent arg0){
+                //Retrieve stuff
+            }
+        });
+
     }
 
     private void enterButton(){
