@@ -315,7 +315,6 @@ public class CalculatorApp extends JFrame{
             this.operator = op;
         }
         else if(!this.operator.equals("")){
-            System.out.println("Fuckery");
             if(secondArg.equals("") && op.equals("-")){
                 secondArg += op;
             }
