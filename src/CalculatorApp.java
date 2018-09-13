@@ -18,6 +18,7 @@ public class CalculatorApp extends JFrame{
     String operator = "";
 
 
+
     public CalculatorApp() {
         setTitle("Calculator");
         setSize(500, 500);
@@ -26,7 +27,7 @@ public class CalculatorApp extends JFrame{
         this.setLayout(new GridLayout(5,5));
         //Lag 2 jpanel, en med fluid en med grid
 
-        displayLabel = new JLabel("Test");
+        displayLabel = new JLabel("0");
         displayLabel.setBounds(0,0,500,100);
         this.add(displayLabel);
 
@@ -229,6 +230,17 @@ public class CalculatorApp extends JFrame{
             }
         });
 
+        JButton clearButton = new JButton("Clear");
+        clearButton.setBounds(400,100,100,50);
+        this.add(clearButton);
+        clearButton.addActionListener(new ActionListener(){
+
+            @Override
+            public void actionPerformed(ActionEvent arg0){
+                clearView();
+            }
+        });
+
     }
 
     private void enterButton(){
@@ -245,25 +257,37 @@ public class CalculatorApp extends JFrame{
 
         switch(operator){
             case "+":
-                result =  firstNum + secondNum;
+                result =  MathUtil.add(firstNum, secondNum);
                 //LABEL STUFF
                 break;
             case "-":
-                result =  firstNum - secondNum;
+                result =  MathUtil.sub(firstNum, secondNum);
                 //LABEL STUFF
                 break;
             case "*":
-                result =  firstNum * secondNum;
+                result =  MathUtil.mul(firstNum, secondNum);
                 //LABEL STUFF
                 break;
             case "/":
-                //do division
-                //remember div by 0
+                try{
+                    MathUtil.div(firstNum, secondNum);
+                }
+                catch(IllegalArgumentException e){
+                    //make popup window?
+                    //otherwise set result to 0?
+                    result = 0;
+                }
                 break;
             default:
                 //set answer to 0?
+                result = 0;
+                //this should never happen
                 break;
         }
+
+        firstArg = String.valueOf(result);
+        operator = "";
+        secondArg = "";
         updateView();
 
     }
@@ -284,9 +308,30 @@ public class CalculatorApp extends JFrame{
     }
 
     private void setOperator(String op){
-        this.operator = op;
+        if(firstArg.equals("") && op.equals("-")){
+            firstArg += op;
+        }
+        else if(!firstArg.equals("") || !(firstArg.equals("-"))){
+            this.operator = op;
+        }
+        else if(!this.operator.equals("")){
+            if(secondArg.equals("") && op.equals("-")){
+                secondArg += op;
+            }
+            else if(!secondArg.equals("") || !secondArg.equals("-")){
+                enterButton();
+                this.operator = op;
+            }
+        }
         updateView();
         //if clicked again, hit enter then set new?
+    }
+
+    private void clearView(){
+        firstArg = "";
+        secondArg = "";
+        operator = "";
+        updateView();
     }
 
     private void updateView(){
