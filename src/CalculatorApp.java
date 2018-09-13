@@ -270,11 +270,12 @@ public class CalculatorApp extends JFrame{
                 break;
             case "/":
                 try{
-                    MathUtil.div(firstNum, secondNum);
+                    result = MathUtil.div(firstNum, secondNum);
                 }
                 catch(IllegalArgumentException e){
                     //make popup window?
                     //otherwise set result to 0?
+                    System.out.println("Fucky");
                     result = 0;
                 }
                 break;
