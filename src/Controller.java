@@ -57,7 +57,7 @@ public class Controller {
         firstArg = String.valueOf(result);
         operator = "";
         secondArg = "";
-        gui.updateView(firstArg, secondArg, operator);
+        updateView();
 
     }
 
@@ -73,7 +73,7 @@ public class Controller {
         else{
             secondArg += num;
         }
-        gui.updateView(firstArg, secondArg, operator);
+        updateView();
     }
 
     public void setOperator(String op){
@@ -92,7 +92,7 @@ public class Controller {
                 this.operator = op;
             }
         }
-        gui.updateView(firstArg, secondArg, operator);
+        updateView();
         //if clicked again, hit enter then set new?
     }
 
@@ -100,9 +100,11 @@ public class Controller {
         firstArg = "";
         secondArg = "";
         operator = "";
-        gui.updateView(firstArg, secondArg, operator);
+        updateView();
     }
 
-
+    private void updateView(){
+        gui.updateView(firstArg, secondArg, operator);
+    }
 
 }
