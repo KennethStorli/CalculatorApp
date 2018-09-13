@@ -1,0 +1,11 @@
+Roles:    
+
+Kenneth   - Utvikler
+Amund     - Utvikler
+Arne      - Utvikler
+Anders    - Utvikler
+Martin    - Utvikler
+
+The most diffucult task encountered was the merge conflict that arrose when groupmembers that had worked on the GUI 
+had to merge their code with the logic code that was allready in place on the master branch. We had unfortunatly not
+discussed any naming conventions for the variables or methods.
