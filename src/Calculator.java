@@ -67,8 +67,8 @@ public class Calculator extends JFrame{
         add(buttons, BorderLayout.CENTER);
     }
 
-    public static void main(String[] args) {
-        Calculator ex = new Calculator();
-        ex.setVisible(true);
-    }
+//    public static void main(String[] args) {
+  //      Calculator ex = new Calculator();
+    //    ex.setVisible(true);
+   // }
 }
