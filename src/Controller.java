@@ -127,8 +127,12 @@ public class Controller {
 
     public void recallSaved(){
         if (saveArg != ""){
-            clearView();
-            firstArg = saveArg;
+            if(operator != ""){
+                secondArg = saveArg;
+            }else{
+                clearView();
+                firstArg = saveArg;
+            }
             updateView();
         }
     }
