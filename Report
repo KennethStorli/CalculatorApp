@@ -1,12 +1,12 @@
 Roles:    
 
-Kenneth   - Developer.
+Kenneth   - Developer. Primarily dealing with the Controller logic
 
 Amund     - Developer. Mainly focused on MathUtil, as well as some controller functionality.
 
-Arne      - Developer.
+Arne      - Developer. Mainly focused on the gui and testing backend features
 
-Anders    - Developer. Mainly focused on the gui, continue on blabla
+Anders    - Developer. Mainly focused on the gui and testing backend features
 
 Martin    - Developer. Focused on parts of the logic in the Controller class.
 
