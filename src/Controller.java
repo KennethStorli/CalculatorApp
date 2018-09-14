@@ -7,7 +7,7 @@ public class Controller {
     String operator = "";
     Boolean hasPerformedACalculation = false;
     String saveArg = "";
-
+    
     CalculatorApp gui;
 
     Controller(CalculatorApp gui){
