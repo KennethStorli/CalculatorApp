@@ -3,7 +3,7 @@
 
 # IntelliJ files
 .DS_Store
-.idea
+.idea/*
 
 # Log file
 *.log
