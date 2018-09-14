@@ -5,6 +5,8 @@ public class Controller {
     String firstArg = "";
     String secondArg = "";
     String operator = "";
+    Boolean hasPerformedACalculation = false;
+    String saveArg = "";
 
     CalculatorApp gui;
 
@@ -14,6 +16,7 @@ public class Controller {
 
     public void enterButton(){
         //do enter button stuff
+        hasPerformedACalculation = true;
         int firstNum = 0;
         int secondNum = 0;
         int result = 0;
@@ -68,7 +71,13 @@ public class Controller {
         //if operator, then update num 2
         //call UpdateView()
         if(operator.equals("")){
-            firstArg += num;
+            if(hasPerformedACalculation){
+                clearView();
+                hasPerformedACalculation = false;
+                firstArg += num;
+            }else{
+                firstArg += num;
+            }
         }
         else{
             secondArg += num;
@@ -105,6 +114,23 @@ public class Controller {
 
     private void updateView(){
         gui.updateView(firstArg, secondArg, operator);
+    }
+
+    public void setSaveArg(){
+        if (secondArg != ""){
+            saveArg = secondArg;
+        }
+        else{
+            saveArg = firstArg;
+        }
+    }
+
+    public void recallSaved(){
+        if (saveArg != ""){
+            clearView();
+            firstArg = saveArg;
+            updateView();
+        }
     }
 
 }

@@ -6,6 +6,7 @@ import java.awt.*;
 public class Calculator extends JFrame{
 
     public Calculator() {
+        //gittest
         setTitle("JFrame Calculator");
         setSize(400, 500);
         setLocationRelativeTo(null);
