@@ -1,14 +1,14 @@
 public class MathUtil {	
-	public static int add(int number1,int number2){
+	public static long add(long number1,long number2){
 		return number1+number2;
 	}
-	public static int sub(int number1, int number2){
+	public static long sub(long number1, long number2){
 		return number1-number2;
 	}
-	public static int mul(int number1, int number2){
+	public static long mul(long number1, long number2){
 		return number1*number2;
 	}
-	public static int div(int number1, int number2){
+	public static long div(long number1, long number2){
 		if (number2 == 0){
 			throw new IllegalArgumentException("Division by zero");
 		}
