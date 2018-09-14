@@ -171,7 +171,7 @@ public class CalculatorApp extends JFrame{
 
             @Override
             public void actionPerformed(ActionEvent arg0){
-                //Save stuff
+                controller.setSaveArg();
             }
         });
 
@@ -195,7 +195,7 @@ public class CalculatorApp extends JFrame{
 
             @Override
             public void actionPerformed(ActionEvent arg0){
-                //Retrieve stuff
+                controller.recallSaved();
             }
         });
 
