@@ -7,7 +7,7 @@ public class Controller {
     String operator = "";
     Boolean hasPerformedACalculation = false;
     String saveArg = "";
-    
+
     CalculatorApp gui;
 
     Controller(CalculatorApp gui){
@@ -17,9 +17,9 @@ public class Controller {
     public void enterButton(){
         //do enter button stuff
         hasPerformedACalculation = true;
-        int firstNum = 0;
-        int secondNum = 0;
-        int result = 0;
+        long firstNum = 0;
+        long secondNum = 0;
+        long result = 0;
         if(!firstArg.equals("")){
             firstNum = Integer.parseInt(firstArg);
         }
