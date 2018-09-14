@@ -5,6 +5,7 @@ public class Controller {
     String firstArg = "";
     String secondArg = "";
     String operator = "";
+    String saveArg = "";
 
     CalculatorApp gui;
 
@@ -105,6 +106,23 @@ public class Controller {
 
     private void updateView(){
         gui.updateView(firstArg, secondArg, operator);
+    }
+
+    public void setSaveArg(){
+        if (secondArg != ""){
+            saveArg = secondArg;
+        }
+        else{
+            saveArg = firstArg;
+        }
+    }
+
+    public void recallSaved(){
+        if (saveArg != ""){
+            clearView();
+            firstArg = saveArg;
+            updateView();
+        }
     }
 
 }
